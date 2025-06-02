@@ -1,0 +1,139 @@
+.login-section{
+    width: 100%;
+    max-width: 450px;
+}
+
+.form{
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+}
+
+.login-section .form .logo img {
+    display: flex;
+    max-width: 40px;
+    min-height: 40px;
+}
+
+.login-section .form h2 {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.login-section .form p {
+   color: #8f8e8e;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-align: left;
+}
+
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: start;
+    margin-top: 0.6rem;
+}
+
+.input-wrapper .input-content{
+    position: relative;
+    text-align: left;
+}
+
+.input-wrapper .input-content label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+
+.input-wrapper .input-content input {
+    width: 300px;
+    padding: 0.65rem 0 0.65rem 2.2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-wrapper .input-content input:focus{
+    box-shadow: 0 1px 2px 0  rgba(0, 0, 0, 0.1);
+}
+
+.input-wrapper .input-content .symbol {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    color: #666;
+    font-size: 1.4rem;
+    margin-top: 0.1em;
+}
+
+.input-wrapper .input-content .password-wrapper {
+    position: relative;
+}
+
+.login-section .form .input-wrapper .input-content .eye {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    cursor: pointer;
+    color: #666;
+    font-size: 1.2rem;
+    margin-top: 0.1em;
+}
+
+.login-section .form .input-wrapper .forgot-password{
+    color: black;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+.login-section .form .input-wrapper .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.remember input {
+    width: auto;
+    padding: 0;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background: #3f5d7d;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
