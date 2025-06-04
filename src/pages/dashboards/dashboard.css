@@ -32,6 +32,7 @@ header .profile{
     flex-direction: row;
     gap: 1rem;
     align-items: center;
+    margin-right: 2rem;
 }
 
 header .profile .notification{
@@ -44,7 +45,6 @@ header .profile .notification{
     color: var(--color-indigo-500);
     position: relative;
 }
-
 
 header .profile .notification::after {
     content: attr(data-count);
@@ -67,6 +67,85 @@ header .profile .notification::after {
     z-index: 100;
 }
 
+.profile-content{
+    position: absolute;
+    right: 1rem;
+    width: 100%;
+    max-width: 220px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-top: 2.8rem;
+    box-shadow: 0 2px 4px var(--box-shadow);
+    padding: 8px;
+    cursor: pointer;
+}
+
+.profile-content .close{
+    margin-left: auto;
+    font-size: large;
+}
+
+.profile-content .close:hover{
+    background-color: var(--color-gray-100);
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+}
+
+.profile-content .profile-card .profile-image{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 6px;
+    background-color: var(--color-gray-100);
+    border-radius: 6px;
+    margin: 0.5em;
+}
+
+.profile-content .profile-card .profile-image:hover{
+    background-color: var(--color-gray-200);
+}
+
+.profile-content .profile-card img{
+    height: 2rem;
+    width: 2rem;
+    object-fit: cover;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.profile-content button{
+    background-color: var(--color-gray-300);
+    width: 100%;
+    padding: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-indigo-600);
+}
+
+.profile-content button .logout{
+    font-size: 22px;
+    margin-left: 8px;
+    color: var(--color-indigo-500);
+}
+
+.profile-content .profile-card .change{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    margin-bottom: 0.2rem;
+}
+
+.profile-content .profile-card .change:hover{
+    background-color: var(--color-gray-50);
+    border-radius: 6px;
+}
 
 header .profile img{
     width: 40px;
@@ -74,6 +153,7 @@ header .profile img{
     aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .main-content {

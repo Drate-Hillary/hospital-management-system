@@ -15,7 +15,7 @@ const PatientSideBar = () => {
         <>
 
             <aside className='sidebar'>
-                <div class="logo">
+                <div className="logo">
                     <h2>HMS Patient</h2>
                 </div>
                 <ul>
