@@ -60,11 +60,7 @@ const PatientSideBar = () => {
                             <AiOutlineComment className='img' /> <span>Telemedicine</span>
                         </NavLink>
                     </li>
-                    <li>
-                        <button className='logout'>
-                            <MdLogout className='img' /> <span>Logout</span>
-                        </button>
-                    </li>
+                    
                 </ul>
             </aside>
 

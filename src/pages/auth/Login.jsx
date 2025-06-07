@@ -1,64 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './login.css'
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { HiOutlineMail } from 'react-icons/hi';
 import assets from '../../assets/assets';
-import { RiUserLine } from 'react-icons/ri';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { replace, useNavigate } from 'react-router-dom';
+import { TbLockPassword } from 'react-icons/tb';
+import { useAuth } from '../../context/AuthContext';
 
 const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState('')
-    const [empid, setEmpid] = useState('')
+    const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const [remember, setRemember] = useState(false)
     const navigate = useNavigate()
+
+    const { login, navigateTo } = useAuth();
+
+    useEffect(()=>{
+        if (navigateTo) {
+            navigate(navigateTo)
+        }
+    }, [navigateTo, navigate])
 
     const handleSubmit = async (e) => {
 
         e.preventDefault()
         setError('')
 
-        try {
-
-            const empidUpper = empid.toUpperCase()
-
-            if (empidUpper.startsWith('DOC/')) {
-
-                const response = await axios.post('http://localhost:8082/login/doctor', {
-                    email: email.trim().toLowerCase(),
-                    doctor_id: empid.trim()
-                })
-
-                if (response.data.success) {
-                    navigate('/doctor/dashboard')
-                } else {
-                    setError('Invalid Doctor Credentials!')
-                }
-
-            }
-
-            else if (empidUpper.startsWith('PAT/')) {
-
-                const response = await axios.post('http://localhost:8082/login/patient', {
-                    email: email.trim().toLowerCase(),
-                    patient_id: empid.trim()
-                })
-
-                if (response.data.success) {
-                    navigate('/patient/dashboard')
-                }else{
-                    setError('Invalid Patient Credentials!')
-                }
-            }
-
-        } catch (error) {
-
-            setError('Login Failed. Please try again');
-            console.log(error);
-
+        const result = await login(email, password)
+        if (!result.success) {
+            setError(result?.error || 'Invalid Credentials!')
         }
     }
 
@@ -96,19 +69,19 @@ const Login = () => {
                         </div>
 
                         <div className="input-content password-wrapper">
-                            <label htmlFor="empid">Enter Password</label>
+                            <label htmlFor="password">Enter Password</label>
                             <input
                                 type={showPassword ? "text" : "password"}
-                                id="empid"
-                                name="empid"
-                                placeholder="Enter your Doctor/Patient ID"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
                                 required
-                                value={empid}
-                                onChange={(e) => setEmpid(e.target.value)}
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
 
                             <span className='symbol'>
-                                <RiUserLine />
+                                <TbLockPassword />
                             </span>
                             <span
                                 className="eye"

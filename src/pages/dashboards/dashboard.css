@@ -67,6 +67,10 @@ header .profile .notification::after {
     z-index: 100;
 }
 
+header .profile .notification[data-count="0"]::after {
+  display: none;
+}
+
 .profile-content{
     position: absolute;
     right: 1rem;
